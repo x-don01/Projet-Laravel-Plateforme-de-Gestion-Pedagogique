@@ -224,6 +224,7 @@
 </div>
 </div>
 <script>
+    
     function openPopup(popupId) {
         document.getElementById(popupId).style.display = 'flex';
     }

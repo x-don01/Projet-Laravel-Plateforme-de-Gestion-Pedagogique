@@ -310,15 +310,13 @@
     }
 
     document.getElementById('mipcBtn').addEventListener('click', function () {
-        openPopup('mipcPopup');
+        openPopup('mipcPopup'); 
     });
 
     document.getElementById('bcgBtn').addEventListener('click', function () {
         openPopup('bcgPopup');
     });
 </script>
-
-
 <br><br>
 
 @endsection

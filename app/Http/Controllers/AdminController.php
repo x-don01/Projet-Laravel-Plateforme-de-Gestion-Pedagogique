@@ -20,9 +20,9 @@ class AdminController extends Controller
 {
    public function dashbord(){
     $id = Auth::id();
-    $nom = Auth::user()->nom; 
-    $prenom = Auth::user()->prenom; 
-        
+    $nom = Auth::user()->nom;
+    $prenom = Auth::user()->prenom;
+
     return view('admin.home', [
         'id' => $id,
         'nom' => $nom,
@@ -30,12 +30,12 @@ class AdminController extends Controller
     ]);
    }
    public function emplois(){
-      
+
     return view('admin.gereremploi');
    }
 
-           //emplois 
-         
+           //emplois
+
       public function storeemplois(Request $request)
       {
         $email=Auth::user()->email;
@@ -49,10 +49,10 @@ class AdminController extends Controller
               'module' => $request->input('module'),
               'activite' => $request->input('activite'),
           ]);
-      
+
           $planning->save();
-        
-      
+
+
           return redirect('/admin/emplois');
       }
     public function showemplois(){
@@ -62,17 +62,13 @@ class AdminController extends Controller
     }
 
 
-
    public function affectersalle(){
-    $locals=local::all() ; 
+    $locals=local::all() ;
     return view('admin.affectersalle' , compact('locals'));
     }
-   
 
-   
-   
-   
-   
+
+
 
    public function storesalle(Request $request)
    {
@@ -80,17 +76,17 @@ class AdminController extends Controller
            'salle' => 'required|string',
            'dep' => 'required|string',
        ]);
-   
+
        Local::create([
            'nom' => $request->input('salle'),
            'departement' => $request->input('dep'),
        ]);
-   
+
        // Redirect back to the affectersalle page with the department parameter
        return redirect()->route('admin.affectersalle', ['departement' => $request->input('dep')])
                       ->with('success', 'Salle ajoutée avec succès.');
    }
-   
+
 
    public function departementPage($departement)
 {
@@ -196,7 +192,7 @@ public function updateCheffiliere(Request $request, $id)
         'prenom' => $request->input('prenom'),
         'email' => $request->input('email'),
         'password' => bcrypt($request->input('password')),
-        
+
     ]);
 
     return redirect()->route('admin.modifierrole')->with('success', 'Cheffiliere information updated successfully.');
@@ -273,7 +269,7 @@ public function registerClass(Request $request)
         'class' => 'required|string',
         'modules' => 'required|array',
     ]);
-    
+
     $class = Classes::create(['class_name' => $request->input('class')]);
 
     // Attach modules to the class
@@ -320,7 +316,7 @@ public function showModifierFiliereForm($id)
     public function modifierFiliere(Request $request, $id)
     {
         $filiere = filiere::findOrFail($id);
-        
+
 
         $request->validate([
             'description' => 'required|string',
@@ -341,7 +337,7 @@ public function showModifierFiliereForm($id)
 
 
 
-    
+
 
 
 

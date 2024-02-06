@@ -24,37 +24,15 @@
             <img src="/images/invite/fst.jpeg" />
         </a>
         <nav id="navbar">
-            {{-- <ul>
 
-                <li><a href="/etudiant/studentscreen"><i   id="dash" class="fa-solid fa-gauge"></i>&nbsp; Dashboard</a></li>
-                <li><a href="/emplois"><i  id="cal" class='bx bxs-calendar' ></i>Emploi du temps</a></li>
-                <li><a href="/demande"><i class="fa-solid fa-file"></i>&nbsp; Demande/suivi</a></li>
-                <li><a href="/annonces"> <i id="annan" class='bx bxs-megaphone'></i>Annonces</a></li>
-                <li>
-                    @if(str_ends_with(Auth::user()->email, '@dlg.com'))
-                        <a href="/signaler"><i class="fa-solid fa-file"></i>&nbsp; Signaler</a>
-                    @endif
-                </li>
-                
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout
-                    </a>
-                </li>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-            </ul> --}}
             @if(str_ends_with(Auth::user()->email, '@etudiant.com'))
             <ul>
                 <li><a href="/etudiant/studentscreen"><i id="dash" class="fa-solid fa-gauge"></i>&nbsp; Dashboard</a></li>
                 <li><a href="/emplois"><i id="cal" class='bx bxs-calendar'></i>Emploi du temps</a></li>
                 <li><a href="/demande"><i class="fa-solid fa-file"></i>&nbsp; Demande/suivi</a></li>
                 <li><a href="/annonces"><i id="annan" class='bx bxs-megaphone'></i>Annonces</a></li>
-            
-                {{-- @if(str_ends_with(Auth::user()->email, '@dlg.com'))
-                    <li><a href="/signaler"><i class="fa-solid fa-file"></i>&nbsp; Signaler</a></li>
-                @endif --}}
-            
+
+
                 <li>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout
@@ -65,17 +43,7 @@
                 </form>
             </ul>
             @endif
-            
-            {{-- @if(str_ends_with(Auth::user()->email, '@dlg.com'))
-                <!-- Add another set of <ul> elements specific to delegue -->
-                    <li><a href="/etudiant/delegue"><i id="dash" class="fa-solid fa-gauge"></i>&nbsp; Dashboard</a></li>
-                    <li><a href="/demande"><i class="fa-solid fa-file"></i>&nbsp; Demande/suivi</a></li>
-                    <li><a href="/annonces"><i id="annan" class='bx bxs-megaphone'></i>Annonces</a></li>
-                <ul>
-                    <!-- Add your delegue-specific list items here -->
-                </ul>
-            @endif --}}
-            
+
         </nav>
     </header>
     <main id="main">
@@ -84,22 +52,7 @@
             <h1 class="heading">FILIERE : {{Auth::user()->classe}}</h1>
             <h1 class="heading">EMAIL : {{Auth::user()->email}}</h1>
             <div class="infos" >
-                {{-- <ul >
-                    <li><strong>Adresse</strong></li>
-                    <li>Date de naissance : 2003-09-30</li>
-                    <li>Email : bouchbusiness01@gmail.com</li>
-                    <li>Adresse : 2021/mipc/398</li>
-                </ul>
-                <ul>
-                    <li><strong>Informations personnelles</strong></li>
-                    <li>Code Massar : S132103697</li>
-                    <li>CIN : Z663587</li>
-                    <li>Etape: 3° Année Analytique Des Données</li>
-                    <li>Code apogée : 21004810</li>
-                </ul>
-                <ul>
 
-                </ul> --}}
             </div>
         </section>
         <section class="demande">

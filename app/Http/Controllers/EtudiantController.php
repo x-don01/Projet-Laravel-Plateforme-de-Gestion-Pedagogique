@@ -8,15 +8,16 @@ use Illuminate\Support\Facades\Auth;
 class EtudiantController extends Controller
 {
     public function dashbord()
-    { 
+    {
         return view('etudiant.studentscreen');
     }
     public function dashbord2()
     {
+        //  récupérer l'ID de l'utilisateur authentifié
         $id = Auth::id();
-        $nom = Auth::user()->nom; 
-        $prenom = Auth::user()->prenom; 
-        
+        $nom = Auth::user()->nom;
+        $prenom = Auth::user()->prenom;
+
         return view('/etudiant/studentscreen', [
             'id' => $id,
             'nom' => $nom,
@@ -26,8 +27,8 @@ class EtudiantController extends Controller
     public function dashborddelegue()
     {
         $id = Auth::id();
-        $nom = Auth::user()->nom; 
-        $prenom = Auth::user()->prenom; 
+        $nom = Auth::user()->nom;
+        $prenom = Auth::user()->prenom;
         return view('delegue.studentscreen', [
             'id' => $id,
             'nom' => $nom,
@@ -35,7 +36,6 @@ class EtudiantController extends Controller
         ]); // Replace 'etudiant.dashboard' with your actual view name
     }
 
-    
 
     public function viewreponsedemande()
     {
@@ -92,8 +92,8 @@ class EtudiantController extends Controller
 
     //         // Set the id_prof with the authenticated professor's ID
     //         $form['creator'] = $profId;
-           
-         
+
+
 
     //         // Create a new instance of the model and set the attributes
     //         $annonce = new Annonces($form);
@@ -109,6 +109,6 @@ class EtudiantController extends Controller
     //     }
     // }
 
-   
+
 
 
